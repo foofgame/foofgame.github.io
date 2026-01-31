@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTA FOOF Transit Authority</title>
+    <style>
+        body { background-color: #0b0b0b; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 40px; line-height: 1.6; }
+        .logo { font-size: 3.5rem; font-weight: 800; color: #007aff; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { font-size: 1.1rem; color: #888; margin-bottom: 40px; font-style: italic; }
+        .container { background: #1a1a1a; padding: 30px; border-radius: 20px; display: inline-block; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 40px; }
+        #countdown { font-size: 3rem; color: #ff3b30; font-weight: bold; font-variant-numeric: tabular-nums; margin: 15px 0; }
+        .links-section { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .btn { background-color: #007aff; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; width: 250px; }
+        .btn:hover { background-color: #0056b3; transform: scale(1.05); }
+        .btn-discord { background-color: #5865F2; }
+        .btn-discord:hover { background-color: #4752c4; }
+        .btn-disabled { background-color: #333; color: #777; cursor: not-allowed; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <div class="logo">FTA FOOF Transit Authority</div>
+    <p class="tagline">The newest actually good transit authority on Roblox with youngest good developers.</p>
+
+    <div class="container">
+        <h2 style="margin-top:0;">INITIAL RELEASE COUNTDOWN</h2>
+        <div id="countdown">Loading...</div>
+        <p style="color: #666;">FTA SUBWAY: IRT LINES | Feb 1st, 12:00 PM GMT+4</p>
+    </div>
+
+    <div class="links-section">
+        <h3>Official Destinations</h3>
+        <a href="https://discord.gg/f3u5RS5r" class="btn btn-discord" target="_blank">Join the Discord</a>
+        <a href="https://www.roblox.com/share?code=1a664c41f8d1b4469f7ec98a5baec70f&type=ExperienceDetails&stamp=1769875853881" class="btn" target="_blank">Play IND Lines</a>
+        <a href="#" class="btn btn-disabled">IRT Lines (Coming Soon)</a>
+    </div>
+
+    <script>
+        // Set the release date for Feb 1st 12:00 PM GMT+4
+        const releaseDate = new Date("February 1, 2026 12:00:00 GMT+0400").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "FTA SUBWAY: IRT LINES IS OUT! 🚇";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
